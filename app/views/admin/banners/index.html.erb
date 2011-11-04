@@ -1,0 +1,35 @@
+<h1>Listing banners</h1>
+
+<table>
+  <tr>
+    <th>Image file name</th>
+    <th>Image content type</th>
+    <th>Image file size</th>
+    <th>Url</th>
+    <th>Banner group</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @banners.each do |banner| %>
+  <tr>
+    <td><%= image_tag banner.image.url(:thumb) %></td>
+    <td><%= banner.image_content_type %></td>
+    <td><%= banner.image_file_size %></td>
+    <td><%= banner.target_link %></td>
+    <td><%= banner.group_name %></td>
+    <td><%= banner.name %></td>
+    <td><%= banner.description %></td>
+    <td><%= link_to 'Show', [:admin,banner] %></td>
+    <td><%= link_to 'Edit', edit_admin_banner_path(banner) %></td>
+    <td><%= link_to 'Destroy', [:admin,banner], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Banner', new_admin_banner_path %>

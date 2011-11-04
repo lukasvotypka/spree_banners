@@ -1,0 +1,6 @@
+
+<% if banners.any? %>
+  <% banners.each do |banner| %>
+    <%= image_tag banner.image.url, :alt => banner.description, :class=>:banner %>
+  <% end %>
+<% end %>

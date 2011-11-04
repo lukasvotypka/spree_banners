@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Image file name:</b>
+  <a href="<%= @banner.image.url  %>"><%= image_tag @banner.image.url(:medium) %></a>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @banner.target_link %>
+</p>
+
+<p>
+  <b>Banner group:</b>
+  <%= @banner.group_name %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @banner.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @banner.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_banner_path(@banner) %> |
+<%= link_to 'Back', admin_banners_path %>
